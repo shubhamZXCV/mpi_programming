@@ -1,0 +1,83 @@
+== Size: small (200 x 200 x 200) ==
+  [seq] run 1: 0.00477773s
+  [seq] run 2: 0.00477873s
+  [seq] run 3: 0.00459784s
+  [P=1] run 1: 0.00476905s
+  [P=1] run 2: 0.00453859s
+  [P=1] run 3: 0.0047122s
+  [P=1] correctness: MATCH
+  [P=2] run 1: 0.018308s
+  [P=2] run 2: 0.00297734s
+  [P=2] run 3: 0.00296633s
+  [P=2] correctness: MATCH
+  [P=4] run 1: 0.0029619s
+  [P=4] run 2: 0.00179479s
+  [P=4] run 3: 0.00181465s
+  [P=4] correctness: MATCH
+  [P=8] run 1: 0.00174136s
+  [P=8] run 2: 0.00172029s
+  [P=8] run 3: 0.00174175s
+  [P=8] correctness: MATCH
+== Size: medium (500 x 500 x 500) ==
+  [seq] run 1: 0.0672625s
+  [seq] run 2: 0.0670288s
+  [seq] run 3: 0.066713s
+  [P=1] run 1: 0.067368s
+  [P=1] run 2: 0.0671039s
+  [P=1] run 3: 0.0669497s
+  [P=1] correctness: MATCH
+  [P=2] run 1: 0.0351196s
+  [P=2] run 2: 0.0357694s
+  [P=2] run 3: 0.0350987s
+  [P=2] correctness: MATCH
+  [P=4] run 1: 0.0199572s
+  [P=4] run 2: 0.0199203s
+  [P=4] run 3: 0.0198106s
+  [P=4] correctness: MATCH
+  [P=8] run 1: 0.0121283s
+  [P=8] run 2: 0.0130963s
+  [P=8] run 3: 0.0122847s
+  [P=8] correctness: MATCH
+== Size: large (1000 x 1000 x 1000) ==
+  [seq] run 1: 0.525969s
+  [seq] run 2: 0.526648s
+  [seq] run 3: 0.525527s
+  [P=1] run 1: 0.528405s
+  [P=1] run 2: 0.528612s
+  [P=1] run 3: 0.528599s
+  [P=1] correctness: MATCH
+  [P=2] run 1: 0.303784s
+  [P=2] run 2: 0.296996s
+  [P=2] run 3: 0.307378s
+  [P=2] correctness: MATCH
+  [P=4] run 1: 0.146327s
+  [P=4] run 2: 0.145556s
+  [P=4] run 3: 0.149316s
+  [P=4] correctness: MATCH
+  [P=8] run 1: 0.095268s
+  [P=8] run 2: 0.0812049s
+  [P=8] run 3: 0.0811718s
+  [P=8] correctness: MATCH
+== Size: very_large (2000 x 2000 x 2000) ==
+  [seq] run 1: 4.22433s
+  [seq] run 2: 4.20858s
+  [seq] run 3: 4.23209s
+  [P=1] run 1: 4.20486s
+  [P=1] run 2: 4.20592s
+  [P=1] run 3: 4.20316s
+  [P=1] correctness: MATCH
+  [P=2] run 1: 2.42251s
+  [P=2] run 2: 2.4266s
+  [P=2] run 3: 2.40799s
+  [P=2] correctness: MATCH
+  [P=4] run 1: 1.27508s
+  [P=4] run 2: 1.25702s
+  [P=4] run 3: 1.24126s
+  [P=4] correctness: MATCH
+  [P=8] run 1: 0.676708s
+  [P=8] run 2: 0.680329s
+  [P=8] run 3: 0.679959s
+  [P=8] correctness: MATCH
+
+Done. Raw timings written to results.csv
+Run: python3 collect_results.py   to build the report tables/plots.

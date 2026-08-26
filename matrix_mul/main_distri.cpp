@@ -42,6 +42,11 @@ int main(int argc, char *argv[]) {
         B.resize(n * p);
     }
 
+    // Make sure every rank has finished reading input / resizing
+    // before we start the timer, so I/O time isn't counted.
+    MPI_Barrier(MPI_COMM_WORLD);
+    double t_start = MPI_Wtime();
+
     MPI_Bcast(B.data(), n * p, MPI_INT, 0, MPI_COMM_WORLD);
 
     // --------------------------------------------------
@@ -87,11 +92,9 @@ int main(int argc, char *argv[]) {
         sendCountsA.data(),
         displacementsA.data(),
         MPI_INT,
-
         localA.data(),
         localRows * n,
         MPI_INT,
-
         0,
         MPI_COMM_WORLD
     );
@@ -105,9 +108,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < localRows; i++) {
         for (int j = 0; j < n; j++) {
             for (int k = 0; k < p; k++) {
-                localC[i * p + k] +=
-                    localA[i * n + j] *
-                    B[j * p + k];
+                localC[i * p + k] += localA[i * n + j] * B[j * p + k];
             }
         }
     }
@@ -128,24 +129,35 @@ int main(int argc, char *argv[]) {
         localC.data(),
         localRows * p,
         MPI_INT,
-
         C.data(),
         recvCountsC.data(),
         displacementsC.data(),
         MPI_INT,
-
         0,
         MPI_COMM_WORLD
     );
+
+    double t_end = MPI_Wtime();
 
     // Rank 0 prints the result
     if (rank == 0) {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < p; j++) {
-                cout << C[i * p + j] << " ";
+                cout << C[i * p + j];
+                if (j != p - 1)
+                    cout << " ";
             }
             cout << "\n";
         }
+        // Timing goes to stderr so it never pollutes the matrix output.
+        // Take the max elapsed time across ranks so stragglers count.
+        double elapsed = t_end - t_start;
+        double maxElapsed;
+        MPI_Reduce(&elapsed, &maxElapsed, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+        cerr << "TIME " << maxElapsed << endl;
+    } else {
+        double elapsed = t_end - t_start;
+        MPI_Reduce(&elapsed, nullptr, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
     }
 
     MPI_Finalize();

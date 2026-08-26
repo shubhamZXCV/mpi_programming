@@ -18,20 +18,14 @@ with open(filename, "w") as f:
     # Write dimensions
     f.write(f"{m} {n} {p}\n")
 
-    # Generate matrix A (m × n)
+    # Generate matrix A (m x n)
     for i in range(m):
-        row = [
-            str(random.randint(MIN_VALUE, MAX_VALUE))
-            for j in range(n)
-        ]
+        row = [str(random.randint(MIN_VALUE, MAX_VALUE)) for j in range(n)]
         f.write(" ".join(row) + "\n")
 
-    # Generate matrix B (n × p)
+    # Generate matrix B (n x p)
     for i in range(n):
-        row = [
-            str(random.randint(MIN_VALUE, MAX_VALUE))
-            for j in range(p)
-        ]
+        row = [str(random.randint(MIN_VALUE, MAX_VALUE)) for j in range(p)]
         f.write(" ".join(row) + "\n")
 
 print(f"Generated {filename}")
