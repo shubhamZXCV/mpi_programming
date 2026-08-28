@@ -15,3 +15,7 @@ data/
 *.slurm.out
 q5_fw_bench_*.out
 q5_fw_bench_*.err
+
+matrix_mul/env
+matrix_mul/inputs
+matrix_mul/outputs
