@@ -1,0 +1,42 @@
+==========================================
+SLURM_JOB_ID = 79941
+SLURM_NODELIST = node06
+SLURM_JOB_GPUS = 
+==========================================
+Node: node06.local   Allocated CPUs: 16   Job: 79941
+== V=50 E=250 ==
+  sequential: 0.000110649s
+  P=1: 0.000105475s  S(P)=1.000  E(P)=1.000  comm%=4.43  correct=yes
+  P=2: 0.000197954s  S(P)=0.533  E(P)=0.266  comm%=72.15  correct=yes
+  P=4: 0.000246951s  S(P)=0.427  E(P)=0.107  comm%=79.16  correct=yes
+  P=8: 0.000368234s  S(P)=0.286  E(P)=0.036  comm%=95.98  correct=yes
+  P=16: 0.0678908s  S(P)=0.002  E(P)=0.000  comm%=99.98  correct=yes
+== V=300 E=1500 ==
+  sequential: 0.0209577s
+  P=1: 0.0172547s  S(P)=1.000  E(P)=1.000  comm%=0.19  correct=yes
+  P=2: 0.0190169s  S(P)=0.907  E(P)=0.454  comm%=7.83  correct=yes
+  P=4: 0.0106251s  S(P)=1.624  E(P)=0.406  comm%=17.27  correct=yes
+  P=8: 0.00611194s  S(P)=2.823  E(P)=0.353  comm%=29.85  correct=yes
+  P=16: 0.00524507s  S(P)=3.290  E(P)=0.206  comm%=60.89  correct=yes
+== V=700 E=3500 ==
+  sequential: 0.26211s
+  P=1: 0.24171s  S(P)=1.000  E(P)=1.000  comm%=0.14  correct=yes
+  P=2: 0.131157s  S(P)=1.843  E(P)=0.921  comm%=6.51  correct=yes
+  P=4: 0.0972997s  S(P)=2.484  E(P)=0.621  comm%=8.40  correct=yes
+  P=8: 0.0669434s  S(P)=3.611  E(P)=0.451  comm%=54.63  correct=yes
+  P=16: 0.0662587s  S(P)=3.648  E(P)=0.228  comm%=55.43  correct=yes
+== V=1200 E=6000 ==
+  sequential: 1.30061s
+  P=1: 1.23008s  S(P)=1.000  E(P)=1.000  comm%=0.08  correct=yes
+  P=2: 0.634872s  S(P)=1.938  E(P)=0.969  comm%=5.38  correct=yes
+  P=4: 0.349195s  S(P)=3.523  E(P)=0.881  comm%=10.85  correct=yes
+  P=8: 0.336876s  S(P)=3.651  E(P)=0.456  comm%=11.75  correct=yes
+  P=16: 0.221528s  S(P)=5.553  E(P)=0.347  comm%=32.85  correct=yes
+== V=2000 E=10000 ==
+  sequential: 7.44271s
+  P=1: 5.181s  S(P)=1.000  E(P)=1.000  comm%=0.07  correct=yes
+  P=2: 2.67374s  S(P)=1.938  E(P)=0.969  comm%=3.38  correct=yes
+  P=4: 1.45288s  S(P)=3.566  E(P)=0.892  comm%=9.15  correct=yes
+  P=8: 1.39448s  S(P)=3.715  E(P)=0.464  comm%=53.93  correct=yes
+  P=16: 0.84277s  S(P)=6.148  E(P)=0.384  comm%=23.35  correct=yes
+Done. Results at ../q5_bench/results.csv

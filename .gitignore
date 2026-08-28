@@ -1,3 +1,21 @@
+# Build artifacts
+build/
+*.o
+*.out
+main_dist
+main_seq
+main_seq_bin
+input_generator
+!input_generator.cpp
+
+# Benchmark scratch (generated graphs, per-run logs, re-derivable via benchmark.sh)
+data/
+
+# Slurm job logs left in the submission directory (kept ones live under cluster_results/)
+*.slurm.out
+q5_fw_bench_*.out
+q5_fw_bench_*.err
+
 matrix_mul/env
 matrix_mul/inputs
 matrix_mul/outputs
